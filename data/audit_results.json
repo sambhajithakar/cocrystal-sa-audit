@@ -1,0 +1,257 @@
+{
+  "total_rows": 66,
+  "rows_a_naive_scraper_would_take_as_SA": 58,
+  "rows_actually_measured_SA_or_ratio": 36,
+  "rows_model_derived": 11,
+  "rows_third_party_provenance": 4,
+  "rows_that_are_not_SA_at_all": 7,
+  "distinct_definition_classes": [
+    "D1",
+    "D1x",
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "D5x",
+    "D6",
+    "D8",
+    "D9",
+    "K1",
+    "K2"
+  ],
+  "supporting_classes": [
+    "S1"
+  ],
+  "distinct_medium_classes": [
+    "biorelevant-micellar",
+    "neat-aqueous",
+    "neat-aqueous-buffer",
+    "surfactant-micellar",
+    "unstated"
+  ],
+  "rows_with_no_stated_pH": 28,
+  "rows_with_no_stated_temperature": 15,
+  "within_pair_within_definition_spreads": [
+    {
+      "drug": "Nevirapine",
+      "coformer": "Maleic acid",
+      "stoich": "1:1",
+      "definition_class": "D1",
+      "n_values": 4,
+      "min": 3.0,
+      "max": 906.0,
+      "fold_spread": 302.0,
+      "what_varies": [
+        "1",
+        "1-5",
+        "2",
+        "5"
+      ],
+      "source": "Kuminek 2016 Chem Commun 52(34):5832-5835"
+    },
+    {
+      "drug": "Danazol",
+      "coformer": "4-hydroxybenzoic acid",
+      "stoich": "1:1",
+      "definition_class": "D8",
+      "n_values": 2,
+      "min": 10.0,
+      "max": 770.0,
+      "fold_spread": 77.0,
+      "what_varies": [
+        "none",
+        "not stated"
+      ],
+      "source": "Kuminek 2016 Adv Drug Deliv Rev 101:143-166"
+    },
+    {
+      "drug": "Danazol",
+      "coformer": "Vanillin",
+      "stoich": "1:1",
+      "definition_class": "D8",
+      "n_values": 2,
+      "min": 6.0,
+      "max": 370.0,
+      "fold_spread": 61.7,
+      "what_varies": [
+        "none",
+        "not stated"
+      ],
+      "source": "Kuminek 2016 Adv Drug Deliv Rev 101:143-166"
+    },
+    {
+      "drug": "Nevirapine",
+      "coformer": "Saccharin",
+      "stoich": "2:1",
+      "definition_class": "D1",
+      "n_values": 1,
+      "min": 0.9,
+      "max": 47.0,
+      "fold_spread": 52.2,
+      "what_varies": [
+        "aqueous"
+      ],
+      "source": "Kuminek 2016 Chem Commun 52(34):5832-5835"
+    },
+    {
+      "drug": "Danazol",
+      "coformer": "Vanillin",
+      "stoich": "1:1",
+      "definition_class": "D4",
+      "n_values": 2,
+      "min": 13.0,
+      "max": 393.0,
+      "fold_spread": 30.2,
+      "what_varies": [
+        "4.96 +/- 0.01 at equilibrium",
+        "5.00 +/- 0.01 at equilibrium"
+      ],
+      "source": "Lipert 2015 J Pharm Sci 104(12):4153-4163"
+    },
+    {
+      "drug": "Nevirapine",
+      "coformer": "Salicylic acid",
+      "stoich": "2:1",
+      "definition_class": "D1",
+      "n_values": 1,
+      "min": 0.6,
+      "max": 11.0,
+      "fold_spread": 18.3,
+      "what_varies": [
+        "aqueous"
+      ],
+      "source": "Kuminek 2016 Chem Commun 52(34):5832-5835"
+    },
+    {
+      "drug": "Indomethacin",
+      "coformer": "Saccharin",
+      "stoich": "1:1",
+      "definition_class": "D8",
+      "n_values": 2,
+      "min": 24.0,
+      "max": 132.0,
+      "fold_spread": 5.5,
+      "what_varies": [
+        "eutectic pH 3.65 (medium nominal pH 5 for the buffer rows)",
+        "eutectic pH 3.66 (medium nominal pH 5 for the buffer rows)"
+      ],
+      "source": "Kuminek 2016 Adv Drug Deliv Rev 101:143-166"
+    },
+    {
+      "drug": "Carbamazepine",
+      "coformer": "Nicotinamide",
+      "stoich": "1:1",
+      "definition_class": "D5",
+      "n_values": 16,
+      "min": 130.0,
+      "max": 348.0,
+      "fold_spread": 2.7,
+      "what_varies": [
+        "0.076 mM",
+        "0.35 mM (CMC 5.5 mM)",
+        "0.76 mM",
+        "1.5 mM",
+        "1.7 mM",
+        "10.4 mM",
+        "17.3 mM",
+        "2.3 mM",
+        "3.5 mM",
+        "3.8 mM",
+        "34.7 mM",
+        "6.7 mM (Sec 2.2.1 says 6.9 mM)",
+        "7.6 mM",
+        "water",
+        "water-based NIC phase solubility"
+      ],
+      "source": "Li 2013 Pharmaceutics 5(4):508-524"
+    },
+    {
+      "drug": "Piroxicam",
+      "coformer": "Saccharin",
+      "stoich": "1:1",
+      "definition_class": "D8",
+      "n_values": 2,
+      "min": 37.0,
+      "max": 52.0,
+      "fold_spread": 1.4,
+      "what_varies": [
+        "eutectic pH 3.64 (medium nominal pH 5 for the buffer rows)",
+        "eutectic pH 3.79 (medium nominal pH 5 for the buffer rows)"
+      ],
+      "source": "Kuminek 2016 Adv Drug Deliv Rev 101:143-166"
+    },
+    {
+      "drug": "Carbamazepine",
+      "coformer": "Salicylic acid",
+      "stoich": "1:1",
+      "definition_class": "D4",
+      "n_values": 2,
+      "min": 9.0,
+      "max": 12.0,
+      "fold_spread": 1.3,
+      "what_varies": [
+        "4.29 +/- 0.02 at equilibrium",
+        "4.37 +/- 0.02 at equilibrium"
+      ],
+      "source": "Lipert 2015 J Pharm Sci 104(12):4153-4163"
+    }
+  ],
+  "CBZ_NIC_same_paper_eutectic_choice": {
+    "values_in_neat_water": [
+      130.0,
+      319.0
+    ],
+    "fold_spread_from_reporting_choice_alone": 2.45,
+    "note": "Li 2013 prints both; the paper itself says the eutectic point 'was not a single point'."
+  },
+  "buffer_vs_biorelevant_same_pair": [
+    {
+      "drug": "Carbamazepine",
+      "coformer": "Salicylic acid",
+      "buffer": 12.0,
+      "FeSSIF": 9.0,
+      "fold_difference": 1.3
+    },
+    {
+      "drug": "Danazol",
+      "coformer": "Vanillin",
+      "buffer": 393.0,
+      "FeSSIF": 13.0,
+      "fold_difference": 30.2
+    }
+  ],
+  "K_eu_situation": {
+    "verified_printed_numeric_K_eu_values_in_14_papers": 4,
+    "values": [
+      {
+        "drug": "Indomethacin",
+        "coformer": "Saccharin",
+        "stoich": "1:1",
+        "K_eu": "642",
+        "definition_class": "K1"
+      },
+      {
+        "drug": "Nevirapine",
+        "coformer": "Saccharin",
+        "stoich": "2:1",
+        "K_eu": "0.4",
+        "definition_class": "K2"
+      },
+      {
+        "drug": "Carbamazepine",
+        "coformer": "Salicylic acid",
+        "stoich": "1:1",
+        "K_eu": "4.8",
+        "definition_class": "K1"
+      },
+      {
+        "drug": "Carbamazepine",
+        "coformer": "Salicylic acid",
+        "stoich": "1:1",
+        "K_eu": "0.6",
+        "definition_class": "K1"
+      }
+    ],
+    "note": "1:1 and 2:1 K_eu are on different scales (SA^2 vs 0.5*(S_c/S_d)^3), so even these two cannot be placed on one axis. A regression target cannot be built from n=2 on two scales."
+  }
+}
