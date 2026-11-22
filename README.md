@@ -16,10 +16,12 @@ data/
   sa_keu_audit.csv          66 rows, 25 provenance columns
   audit_results.json        output of code/analyze_audit.py
   harmonization_results.json output of code/harmonization_test.py
+  extended_results.json     output of code/extended_tests.py
   smiles.csv                structures of all 12 compounds, from two independent sources
 code/
   analyze_audit.py          composition, within-pair spread, K_eu position
   harmonization_test.py     cross-medium harmonization using SR_drug
+  extended_tests.py         direct SR test, inverse inference, reporting completeness
   make_figures.py           both figures, from the outputs above
 figures/
   figure1_data_model.pdf    the medium- and pH-resolved data model
@@ -34,6 +36,7 @@ sources/
 ```
 python3 code/analyze_audit.py          # run from data/'s parent, or adjust paths
 python3 code/harmonization_test.py
+python3 code/extended_tests.py
 python3 code/make_figures.py
 ```
 
