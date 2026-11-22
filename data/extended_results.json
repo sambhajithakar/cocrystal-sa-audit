@@ -1,0 +1,312 @@
+{
+  "A_direct_SR_test": {
+    "test": "SR_cocrystal = SR_drug^(1/2) on printed solubilization ratios only",
+    "source": "Lipert 2015 J Pharm Sci 104(12):4153-4163",
+    "audit_rows_used": [
+      "R062",
+      "R050",
+      "R051"
+    ],
+    "SR_drug_printed": 766.0,
+    "SR_drug_uncertainty": 80.0,
+    "predicted_SR_cocrystal": 27.68,
+    "predicted_interval": [
+      26.19,
+      29.09
+    ],
+    "pairs": [
+      {
+        "coformer": "4-hydroxybenzoic acid",
+        "SR_cocrystal_printed": 23.0,
+        "uncertainty": 3.0,
+        "printed_interval": [
+          20.0,
+          26.0
+        ],
+        "relative_discrepancy_pct": 20.3,
+        "intervals_overlap": false
+      },
+      {
+        "coformer": "Vanillin",
+        "SR_cocrystal_printed": 24.0,
+        "uncertainty": 4.0,
+        "printed_interval": [
+          20.0,
+          28.0
+        ],
+        "relative_discrepancy_pct": 15.3,
+        "intervals_overlap": true
+      }
+    ],
+    "sign_of_discrepancy": "prediction exceeds measurement for both pairs; this is the sign expected when coformer solubilization (the epsilon correction of the source relation) is not applied, as here"
+  },
+  "B_inverse_inference": {
+    "test": "inverse inference of an unreported SR_drug, cross-checked between two cocrystals",
+    "drug": "Danazol",
+    "reference_medium": "aqueous media (not further specified in the source)",
+    "solubilizing_medium": "Tween 80 solution (concentration not printed in the source)",
+    "source": "Kuminek 2016 Adv Drug Deliv Rev 101:143-166",
+    "inferences": [
+      {
+        "coformer": "4-hydroxybenzoic acid",
+        "audit_rows_used": [
+          "R063",
+          "R065"
+        ],
+        "SA_reference": 770.0,
+        "SA_solubilizing": 10.0,
+        "observed_reduction": 77.0,
+        "inferred_SR_drug": 5929,
+        "interval": [
+          5371,
+          6578
+        ]
+      },
+      {
+        "coformer": "Vanillin",
+        "audit_rows_used": [
+          "R064",
+          "R066"
+        ],
+        "SA_reference": 370.0,
+        "SA_solubilizing": 6.0,
+        "observed_reduction": 61.67,
+        "inferred_SR_drug": 3803,
+        "interval": [
+          3231,
+          4538
+        ]
+      }
+    ],
+    "precision_cases": [
+      {
+        "precision_assumption": "every printed figure read to the nearest unit",
+        "inferences": [
+          {
+            "coformer": "4-hydroxybenzoic acid",
+            "audit_rows_used": [
+              "R063",
+              "R065"
+            ],
+            "SA_reference": 770.0,
+            "SA_solubilizing": 10.0,
+            "observed_reduction": 77.0,
+            "inferred_SR_drug": 5929,
+            "interval": [
+              5371,
+              6578
+            ]
+          },
+          {
+            "coformer": "Vanillin",
+            "audit_rows_used": [
+              "R064",
+              "R066"
+            ],
+            "SA_reference": 370.0,
+            "SA_solubilizing": 6.0,
+            "observed_reduction": 61.67,
+            "inferred_SR_drug": 3803,
+            "interval": [
+              3231,
+              4538
+            ]
+          }
+        ],
+        "intervals_overlap": false,
+        "gap_ratio": 1.18
+      },
+      {
+        "precision_assumption": "figures carrying a trailing zero read to the nearest ten",
+        "inferences": [
+          {
+            "coformer": "4-hydroxybenzoic acid",
+            "audit_rows_used": [
+              "R063",
+              "R065"
+            ],
+            "SA_reference": 770.0,
+            "SA_solubilizing": 10.0,
+            "observed_reduction": 77.0,
+            "inferred_SR_drug": 5929,
+            "interval": [
+              5308,
+              6655
+            ]
+          },
+          {
+            "coformer": "Vanillin",
+            "audit_rows_used": [
+              "R064",
+              "R066"
+            ],
+            "SA_reference": 370.0,
+            "SA_solubilizing": 6.0,
+            "observed_reduction": 61.67,
+            "inferred_SR_drug": 3803,
+            "interval": [
+              3153,
+              4649
+            ]
+          }
+        ],
+        "intervals_overlap": false,
+        "gap_ratio": 1.14
+      }
+    ],
+    "cross_pair_consistency": {
+      "point_inferences": [
+        5929,
+        3803
+      ],
+      "ratio_of_point_inferences": 1.56,
+      "geometric_mean": 4748,
+      "nearest_unit_intervals_overlap": false,
+      "nearest_unit_gap_ratio": 1.18,
+      "nearest_ten_intervals_overlap": false,
+      "nearest_ten_gap_ratio": 1.14
+    },
+    "falsifiable_prediction": {
+      "quantity": "SR_drug for danazol, Tween 80 solution relative to aqueous medium",
+      "range": [
+        3153,
+        6655
+      ],
+      "central_value": 4748,
+      "condition": "the Tween 80 concentration is not printed in the source, so the medium must be specified before the prediction can be tested",
+      "comparison_to_printed_biorelevant_value": {
+        "printed_SR_drug_FeSSIF": 766.0,
+        "ratio_range": [
+          5.0,
+          7.7
+        ],
+        "note": "arithmetic ratio only; no claim is made about physical plausibility"
+      }
+    }
+  },
+  "C_reporting_completeness": {
+    "machine_scoreable_items": [
+      "1_definition",
+      "2_denominator",
+      "3_stoichiometry",
+      "4_medium",
+      "6_pH",
+      "7_temperature",
+      "8_measured_or_derived"
+    ],
+    "items_not_machine_scoreable": [
+      "5 (conditional on medium; reported separately)",
+      "9 (second-hand provenance)",
+      "10 (eutectic composition)"
+    ],
+    "per_source": [
+      {
+        "source": "Li 2013 Pharmaceutics 5(4):508-524",
+        "rows": 17,
+        "item_fractions": {
+          "1_definition": 1.0,
+          "2_denominator": 1.0,
+          "3_stoichiometry": 0.94,
+          "4_medium": 0.94,
+          "6_pH": 0.0,
+          "7_temperature": 0.94,
+          "8_measured_or_derived": 1.0
+        },
+        "mean_completeness": 0.83,
+        "micellar_rows": 14,
+        "surfactant_concentration_reported": 14,
+        "prints_SR_drug": false
+      },
+      {
+        "source": "Lipert 2015 J Pharm Sci 104(12):4153-4163",
+        "rows": 13,
+        "item_fractions": {
+          "1_definition": 1.0,
+          "2_denominator": 1.0,
+          "3_stoichiometry": 0.85,
+          "4_medium": 1.0,
+          "6_pH": 1.0,
+          "7_temperature": 1.0,
+          "8_measured_or_derived": 1.0
+        },
+        "mean_completeness": 0.98,
+        "micellar_rows": 11,
+        "surfactant_concentration_reported": 0,
+        "prints_SR_drug": true
+      },
+      {
+        "source": "Kuminek 2016 Adv Drug Deliv Rev 101:143-166",
+        "rows": 13,
+        "item_fractions": {
+          "1_definition": 1.0,
+          "2_denominator": 1.0,
+          "3_stoichiometry": 1.0,
+          "4_medium": 1.0,
+          "6_pH": 0.46,
+          "7_temperature": 0.85,
+          "8_measured_or_derived": 1.0
+        },
+        "mean_completeness": 0.9,
+        "micellar_rows": 6,
+        "surfactant_concentration_reported": 1,
+        "prints_SR_drug": false
+      },
+      {
+        "source": "Cao 2018 J Pharm Sci 107(1):380-389",
+        "rows": 11,
+        "item_fractions": {
+          "1_definition": 1.0,
+          "2_denominator": 1.0,
+          "3_stoichiometry": 1.0,
+          "4_medium": 1.0,
+          "6_pH": 1.0,
+          "7_temperature": 0.0,
+          "8_measured_or_derived": 1.0
+        },
+        "mean_completeness": 0.86,
+        "micellar_rows": 11,
+        "surfactant_concentration_reported": 11,
+        "prints_SR_drug": false
+      },
+      {
+        "source": "Kuminek 2016 Chem Commun 52(34):5832-5835",
+        "rows": 10,
+        "item_fractions": {
+          "1_definition": 1.0,
+          "2_denominator": 1.0,
+          "3_stoichiometry": 1.0,
+          "4_medium": 0.7,
+          "6_pH": 0.6,
+          "7_temperature": 1.0,
+          "8_measured_or_derived": 1.0
+        },
+        "mean_completeness": 0.9,
+        "micellar_rows": 0,
+        "surfactant_concentration_reported": 0,
+        "prints_SR_drug": false
+      },
+      {
+        "source": "Huang 2019 Mol Pharm 16(9):3887-3895",
+        "rows": 2,
+        "item_fractions": {
+          "1_definition": 1.0,
+          "2_denominator": 1.0,
+          "3_stoichiometry": 1.0,
+          "4_medium": 1.0,
+          "6_pH": 1.0,
+          "7_temperature": 0.5,
+          "8_measured_or_derived": 1.0
+        },
+        "mean_completeness": 0.93,
+        "micellar_rows": 1,
+        "surfactant_concentration_reported": 0,
+        "prints_SR_drug": false
+      }
+    ],
+    "n_sources": 6,
+    "corpus_mean_completeness": 0.9,
+    "micellar_rows_total": 43,
+    "micellar_rows_with_concentration": 26,
+    "sources_printing_SR_drug": 1
+  }
+}
