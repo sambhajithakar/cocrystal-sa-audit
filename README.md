@@ -63,8 +63,12 @@ negative result is reproducible.
 
 ## Licence
 
-**[to be set by the authors before publication]**
+Released under the MIT licence; see `LICENSE`.
 
 ## Citation
 
-**[to be completed on acceptance; this deposit is journal-neutral by design and names no journal]**
+Thakar, S. B.; Ghorpade, P. N. *Cocrystal solubility-advantage provenance audit.*
+GitHub repository, 2026. https://github.com/sambhajithakar/cocrystal-sa-audit
+
+The article reporting this audit is under consideration; its citation will be added here
+on acceptance. This deposit is journal-neutral by design and names no journal.
