@@ -14,6 +14,9 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+# Figures are written to the repository's figures/ directory, where the deposit keeps them.
+FIGDIR = os.path.join(HERE, "..", "figures")
+os.makedirs(FIGDIR, exist_ok=True)
 
 def _find_inputs():
     """Locate the analysis outputs.
@@ -129,8 +132,8 @@ if nopred:
     # for them on these axes. They are named in the caption rather than drawn on the artwork.
     print("  caption must state: not plottable (no SR_drug for that medium):", items)
 
-fig.savefig(os.path.join(HERE, "figure2_harmonization.pdf"))
-fig.savefig(os.path.join(HERE, "figure2_harmonization.png"), dpi=600)
+fig.savefig(os.path.join(FIGDIR, "figure2_harmonization.pdf"))
+fig.savefig(os.path.join(FIGDIR, "figure2_harmonization.png"), dpi=600)
 plt.close(fig)
 
 # ----------------------------------------------------------------- Figure 1
@@ -183,8 +186,8 @@ ax.text(14, 11.6,
         "one row per (system × conditions),\nnot one row per pair",
         ha="center", va="top", fontsize=6.5, color=MUTED, linespacing=1.4, style="italic")
 
-fig.savefig(os.path.join(HERE, "figure1_data_model.pdf"))
-fig.savefig(os.path.join(HERE, "figure1_data_model.png"), dpi=600)
+fig.savefig(os.path.join(FIGDIR, "figure1_data_model.pdf"))
+fig.savefig(os.path.join(FIGDIR, "figure1_data_model.png"), dpi=600)
 plt.close(fig)
 
-print("figure1_data_model.pdf/.png and figure2_harmonization.pdf/.png written to", HERE)
+print("figure1_data_model.pdf/.png and figure2_harmonization.pdf/.png written to", os.path.normpath(FIGDIR))

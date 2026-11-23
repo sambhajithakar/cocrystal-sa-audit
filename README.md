@@ -22,7 +22,7 @@ code/
   analyze_audit.py          composition, within-pair spread, K_eu position
   harmonization_test.py     cross-medium harmonization using SR_drug
   extended_tests.py         direct SR test, inverse inference, reporting completeness
-  make_figures.py           both figures, from the outputs above
+  make_figures.py           both figures, from the outputs above, written to figures/
 figures/
   figure1_data_model.pdf    the medium- and pH-resolved data model
   figure2_harmonization.pdf observed vs predicted cross-medium reduction
@@ -60,9 +60,12 @@ pair in neat water as both 319 and 130 depending on the eutectic composition cho
 
 ## Sources not obtained
 
-Three publisher-paywalled papers and one repository-hosted thesis could not be read. They are
-listed with the outcome of each retrieval attempt in `sources/extraction-log.md`, so that the
-negative result is reproducible.
+Fourteen publications were surveyed for extractable values. Six were obtained and read verbatim
+and supply every value in the audit table. Of the remaining eight, two publisher-paywalled papers
+and one repository-hosted thesis could not be read, two further full texts were blocked by a
+reCAPTCHA challenge at the host, and three were available in abstract only. Each is listed with
+the outcome of its retrieval attempt in `sources/extraction-log.md`, so that the negative result
+is reproducible.
 
 ## Licence
 
