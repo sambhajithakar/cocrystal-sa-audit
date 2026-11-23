@@ -38,27 +38,30 @@ def _find_inputs():
 
 AUDIT = _find_inputs()
 
+# Lettering follows the journal's graphics appendix: a sans-serif face, type
+# that is still legible when the figure is reduced to its column width, and no
+# line thinner than 0.5 point.
 plt.rcParams.update({
-    "font.family": "serif",
-    "font.serif": ["DejaVu Serif"],
-    "font.size": 8,
-    "axes.labelsize": 8,
-    "axes.titlesize": 8,
-    "xtick.labelsize": 7,
-    "ytick.labelsize": 7,
-    "legend.fontsize": 7,
-    "axes.linewidth": 0.6,
-    "xtick.major.width": 0.6,
-    "ytick.major.width": 0.6,
+    "font.family": "sans-serif",
+    "font.sans-serif": ["DejaVu Sans"],
+    "font.size": 9,
+    "axes.labelsize": 9,
+    "axes.titlesize": 9,
+    "xtick.labelsize": 8.5,
+    "ytick.labelsize": 8.5,
+    "legend.fontsize": 8.5,
+    "axes.linewidth": 0.9,
+    "xtick.major.width": 0.9,
+    "ytick.major.width": 0.9,
     "savefig.bbox": "tight",
     "savefig.pad_inches": 0.02,
     "pdf.fonttype": 42,
 })
 
 INK      = "#1a1a1a"
-MUTED    = "#8a8a8a"
-BLUE     = "#2f6f9f"   # printed SR_drug
-AMBER    = "#c07a1e"   # derived SR_drug
+MUTED    = "#555555"
+BLUE     = "#1f5c8b"   # printed SR_drug
+AMBER    = "#a66212"   # derived SR_drug
 PANEL    = "#f2f2f2"
 
 # ----------------------------------------------------------------- Figure 2
@@ -69,7 +72,7 @@ pts = [r for r in res if r["predicted_reduction"] is not None]
 # position on these axes, so they are stated in the corner rather than placed at a made-up y.
 nopred = [r for r in res if r["predicted_reduction"] is None]
 
-fig, ax = plt.subplots(figsize=(3.35, 3.1))
+fig, ax = plt.subplots(figsize=(5.0, 4.3))
 
 lo, hi = 1.15, 45.0
 ax.plot([lo, hi], [lo, hi], ls="--", lw=0.8, color=MUTED, zorder=1)
@@ -137,7 +140,7 @@ fig.savefig(os.path.join(FIGDIR, "figure2_harmonization.png"), dpi=600)
 plt.close(fig)
 
 # ----------------------------------------------------------------- Figure 1
-fig, ax = plt.subplots(figsize=(6.9, 3.2))
+fig, ax = plt.subplots(figsize=(6.9, 3.4))
 ax.set_xlim(0, 100); ax.set_ylim(0, 46); ax.axis("off")
 
 def box(x, y, w, h, title, lines, edge=INK, face="white", lw=0.8, ls="-"):
