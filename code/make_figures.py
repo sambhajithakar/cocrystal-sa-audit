@@ -62,7 +62,7 @@ INK      = "#1a1a1a"
 MUTED    = "#555555"
 BLUE     = "#1f5c8b"   # printed SR_drug
 AMBER    = "#a66212"   # derived SR_drug
-PANEL    = "#f2f2f2"
+PANEL    = "#eceef1"
 
 # ----------------------------------------------------------------- Figure 2
 res = json.load(open(os.path.join(AUDIT, "harmonization_results.json")))
@@ -140,54 +140,54 @@ fig.savefig(os.path.join(FIGDIR, "figure2_harmonization.png"), dpi=600)
 plt.close(fig)
 
 # ----------------------------------------------------------------- Figure 1
-fig, ax = plt.subplots(figsize=(6.9, 3.4))
+fig, ax = plt.subplots(figsize=(8.6, 4.3))
 ax.set_xlim(0, 100); ax.set_ylim(0, 46); ax.axis("off")
 
-def box(x, y, w, h, title, lines, edge=INK, face="white", lw=0.8, ls="-"):
+def box(x, y, w, h, title, lines, edge=INK, face="white", lw=1.4, ls="-"):
     ax.add_patch(FancyBboxPatch((x, y), w, h,
         boxstyle="round,pad=0.6,rounding_size=1.2",
         linewidth=lw, edgecolor=edge, facecolor=face, linestyle=ls, zorder=2))
     ax.text(x + w / 2, y + h - 2.6, title, ha="center", va="top",
-            fontsize=8, fontweight="bold", color=INK, zorder=3)
+            fontsize=9, fontweight="bold", color=INK, zorder=3)
     for i, t in enumerate(lines):
         ax.text(x + 2.2, y + h - 6.6 - i * 3.1, t, ha="left", va="top",
-                fontsize=7, color=INK, zorder=3)
+                fontsize=7.5, color=INK, zorder=3)
 
-box(1, 14, 26, 30, "VALUE",
+box(1, 12, 31, 32, "VALUE",
     ["value, as printed", "quantity (SA / K$_{eu}$ / $\\Phi$ / S$_{CC,T}$)",
-     "definition class", "denominator  ← often implicit",
+     "definition class", "denominator  \u2190 often implicit",
      "measured or model-derived", "range endpoints, if a range",
      "location in source", "source + version"],
     face=PANEL)
 
-box(37, 24, 27, 20, "SYSTEM",
-    ["drug", "coformer", "stoichiometry  ← K$_{eu}$ scale"])
+box(38, 24, 30, 20, "SYSTEM",
+    ["drug", "coformer", "stoichiometry  \u2190 K$_{eu}$ scale"])
 
-box(37, 1, 27, 20, "CONDITIONS",
+box(38, 1, 30, 20, "CONDITIONS",
     ["medium + medium class", "surfactant + concentration",
-     "pH, equilibrium  ← often absent", "temperature"])
+     "pH, equilibrium  \u2190 often absent", "temperature"])
 
-box(73, 14, 26, 20, "COMPARABILITY",
+box(72, 14, 27, 20, "COMPARABILITY",
     ["SR$_{\\mathrm{drug}}$ in this medium", "reference medium for SR",
-     "ε, if coformer solubilized"],
-    edge=AMBER, ls=(0, (4, 2)), lw=1.0)
+     "\u03b5, if coformer solubilized"],
+    edge=AMBER, ls=(0, (4, 2)), lw=1.8)
 
 for y0, y1 in ((29, 34), (29, 11)):
-    ax.add_patch(FancyArrowPatch((27.8, y0), (36.2, y1),
-        arrowstyle="-", linewidth=0.7, color=MUTED, zorder=1,
+    ax.add_patch(FancyArrowPatch((32.8, y0), (37.2, y1),
+        arrowstyle="-", linewidth=1.2, color=INK, zorder=1,
         connectionstyle="arc3,rad=0"))
-ax.add_patch(FancyArrowPatch((64.8, 29), (72.2, 26),
-    arrowstyle="-|>", mutation_scale=8, linewidth=0.9, color=AMBER, zorder=1))
-ax.add_patch(FancyArrowPatch((64.8, 11), (72.2, 22),
-    arrowstyle="-|>", mutation_scale=8, linewidth=0.9, color=AMBER, zorder=1))
+ax.add_patch(FancyArrowPatch((68.8, 29), (71.2, 26),
+    arrowstyle="-|>", mutation_scale=13, linewidth=1.5, color=AMBER, zorder=1))
+ax.add_patch(FancyArrowPatch((68.8, 11), (71.2, 22),
+    arrowstyle="-|>", mutation_scale=13, linewidth=1.5, color=AMBER, zorder=1))
 
-ax.text(86, 10.4,
+ax.text(85.5, 10.4,
         "without this block, two correct\nmeasurements in different media\nare indistinguishable "
-        "from a\ndisagreement (§3.6)",
-        ha="center", va="top", fontsize=6.5, color=AMBER, linespacing=1.4, style="italic")
-ax.text(14, 11.6,
-        "one row per (system × conditions),\nnot one row per pair",
-        ha="center", va="top", fontsize=6.5, color=MUTED, linespacing=1.4, style="italic")
+        "from a\ndisagreement (\u00a73.6)",
+        ha="center", va="top", fontsize=7, color=AMBER, linespacing=1.4, style="italic")
+ax.text(16.5, 9.6,
+        "one row per (system \u00d7 conditions),\nnot one row per pair",
+        ha="center", va="top", fontsize=7, color=INK, linespacing=1.4, style="italic")
 
 fig.savefig(os.path.join(FIGDIR, "figure1_data_model.pdf"))
 fig.savefig(os.path.join(FIGDIR, "figure1_data_model.png"), dpi=600)
