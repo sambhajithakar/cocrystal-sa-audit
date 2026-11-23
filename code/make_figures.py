@@ -72,7 +72,7 @@ pts = [r for r in res if r["predicted_reduction"] is not None]
 # position on these axes, so they are stated in the corner rather than placed at a made-up y.
 nopred = [r for r in res if r["predicted_reduction"] is None]
 
-fig, ax = plt.subplots(figsize=(5.0, 4.3))
+fig, ax = plt.subplots(figsize=(6.4, 5.4))
 
 lo, hi = 1.15, 45.0
 ax.plot([lo, hi], [lo, hi], ls="--", lw=0.8, color=MUTED, zorder=1)
