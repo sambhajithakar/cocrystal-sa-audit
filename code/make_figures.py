@@ -88,17 +88,23 @@ for r in pts:
             ls="none", zorder=3)
 
 lab = {
-    ("Carbamazepine", "Salicylic acid"): ("CBZ–SLC", 15, 18, "left"),
+    ("Carbamazepine", "Salicylic acid"): ("CBZ–SLC", 34, -4, "left"),
     ("Danazol", "Vanillin"):             ("DNZ–VAN", -10, 4, "right"),
-    ("Piroxicam", "Saccharin"):          ("PXC–SAC", 17, 2, "left"),
-    ("Indomethacin", "Saccharin"):       ("IND–SAC", -11, -8, "right"),
+    ("Piroxicam", "Saccharin"):          ("PXC–SAC", 34, 22, "left"),
+    ("Indomethacin", "Saccharin"):       ("IND–SAC", 10, -11, "left"),
 }
 for r in pts:
     t, dx, dy, ha = lab[(r["drug"], r["coformer"])]
+    # The two smallest reductions sit almost on top of each other at the foot of the
+    # identity line, so their labels are set off to the right with a thin leader rather
+    # than printed on top of one another.
+    leader = dict(arrowprops=dict(arrowstyle="-", lw=0.5, color=MUTED,
+                                  shrinkA=1, shrinkB=3)) if abs(dx) > 30 else {}
     ax.annotate(f"{t}\n{r['relative_discrepancy_pct']}%",
                 (r["observed_reduction"], r["predicted_reduction"]),
                 textcoords="offset points", xytext=(dx, dy),
-                fontsize=6.5, color=INK, ha=ha, va="center", linespacing=1.25)
+                fontsize=6.5, color=INK, ha=ha, va="center", linespacing=1.25,
+                **leader)
 
 ax.set_xscale("log"); ax.set_yscale("log")
 ax.set_xlim(lo, hi); ax.set_ylim(lo, hi)
